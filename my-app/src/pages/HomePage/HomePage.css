@@ -1,0 +1,61 @@
+.home_div {
+    width: 700px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin: 50px auto 0 auto;
+}
+
+.home_h1 {
+    text-align: center;
+    font-size: 30px;
+    color: var(--text-color);
+}
+
+.home_h3 {
+    text-align: center;
+    font-size: 25px;
+    color: var(--text-color);
+}
+
+.home_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.signInBtn {
+    padding: 10px;
+    margin: 0 50px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 3px solid var(--button-color);
+    background-color: var(--button-background-color);
+    color: var(--button-color);
+    width: 200px;
+}
+
+.theme_btns {
+    display: flex;
+    align-self: flex-end;
+    margin-bottom: 40px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn-theme {
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    font-size: 1rem;
+    background-color: var(--button-background-color);
+    color: var(--button-color);
+    border: none;
+}
+
+.btn-theme:hover {
+    filter: brightness(90%);
+    cursor: pointer;
+}

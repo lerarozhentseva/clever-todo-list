@@ -1,0 +1,125 @@
+.todolist {
+    width: 700px;
+    margin: 50px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.todolist_h1{
+    font-size: 35px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.btn_out {
+    display: flex;
+    align-self: flex-end;
+    font-size: 20px;
+    justify-content: center;
+    width: 100px;
+    background-color: var(--button-background-color);
+    color: var(--button-color);
+    border: 2px solid var(--button-color);
+}
+
+.days_block {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}
+
+.days_block::-webkit-scrollbar {
+    width: 12px;
+}
+
+.days_block::-webkit-scrollbar-track {
+    background: var(--button-background-color);
+}
+
+.days_block::-webkit-scrollbar-thumb {
+    background-color: var(--button-background-color);
+    border-radius: 20px;
+    border: 3px solid var(--button-color);
+}
+
+.addNew_btn {
+    display: inline-block;
+    background-color: var(--button-background-color);
+    color: var(--button-color);
+    width: 100%;
+    border: 2px solid var(--button-color);
+    padding: 10px 0;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.add-block {
+    width: 400px;
+    margin: 20px auto;
+}
+
+.modal_btn {
+    display: inline-block;
+    padding: 8px;
+    color: var(--button-color);
+    background-color: var(--button-background-color);
+    font-size: 15px;
+    text-align: center;
+    width: 100px;
+    border: none;
+}
+
+.dialog_inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal_input {
+    margin-top: 15px;
+    padding: 10px;
+    width: 350px;
+    font-size: 15px;
+}
+
+.date_item {
+    background-color: var(--date-background);
+    border: 1px solid var(--date-color);
+    color: var(--date-color);
+    border-radius: 5px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.date_text {
+    padding: 5px;
+}
+
+.checked {
+    background-color: var(--button-background-color);
+    color: var(--background-color);
+    border-radius: 5px;
+}
+
+.check_block {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    justify-content: space-around;
+}
+
+.uncomplete {
+    width: 10px;
+    height: 10px;
+    background-color: var(--uncomplete-color);
+    border-radius: 50%;
+}
+
+.complete{
+    width: 10px;
+    height: 10px;
+    background-color: var(--complete-color);
+    border-radius: 50%;
+}

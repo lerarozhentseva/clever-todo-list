@@ -1,0 +1,43 @@
+.todo {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    margin: 20px 0;
+    border: 2px solid var(--button-color);
+    background-color: var(--button-background-color);
+    border-radius: 15px;
+    justify-content: space-between;
+    padding: 0 15px;
+    align-items: center;
+}
+
+.todo_btn {
+    width: 40px;
+    color: var(--button-color);
+    border-radius: 5px;
+    border: 1px solid var(--button-color);
+    background-color: var(--button-background-color);
+    height: 40px;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.todo_btn:hover {
+    color: var(--color-icon-hover);
+    cursor: pointer;
+}
+
+.todo_elem {
+    height: 30px;
+    font-size: 1rem;
+    margin-right: 10px;
+    color: var(--button-color);
+    outline: none;
+    background-color: var(--background-color);
+    border: none;
+}
+
+.checked-todo {
+    text-decoration: line-through;
+}
+

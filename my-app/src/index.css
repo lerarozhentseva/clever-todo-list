@@ -1,0 +1,45 @@
+/*dark theme*/
+
+html[data-theme='dark'] {
+    --button-color: #cccccc;
+    --button-background-color: #212024;
+
+    --input-text-color: #424242;
+    --input-background-color: #7a8187;
+
+    --background-color: #696969;
+    --text-color: #1f1c1d;
+
+    --todo-btn-background: #524f59;
+
+    --complete-color: #d2d2d4;
+    --uncomplete-color: #909090;
+
+    --date-background: #1f1c1d;
+    --date-color: #909090;
+
+    --color-icon-hover: #909090;
+}
+
+/*light theme*/
+
+html[data-theme='light'] {
+    --button-color: #0000FF;
+    --button-background-color: #42AAFF;
+
+    --input-text-color: #6A5ACD;
+    --input-background-color: #A2ADD0;
+
+    --background-color: #ABCDEF;
+    --text-color: #0000FF;
+
+    --todo-btn-background: #A2ADD0;
+
+    --complete-color: #002F55;
+    --uncomplete-color: #909090;
+
+    --date-background: #CCCCFF;
+    --date-color: #6A5ACD;
+
+    --color-icon-hover: #1E213D;
+}

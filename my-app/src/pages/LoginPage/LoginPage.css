@@ -1,0 +1,63 @@
+.login_div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 650px;
+    margin: 100px auto 0 auto;
+}
+
+.btn_back {
+    display: flex;
+    align-self: flex-end;
+    font-size: 20px;
+    justify-content: center;
+    width: 100px;
+    background-color: var(--button-background-color);
+    color: var(--button-color);
+    border: 2px solid var(--button-color);
+}
+
+.login_h1 {
+    text-align: center;
+    color: var(--text-color);
+}
+
+.login_label {
+    font-size: 20px;
+    color: var(--text-color);
+    margin-top: 20px;
+}
+
+.login_input {
+    display: inline-block;
+    padding: 6px;
+    font-size: 15px;
+}
+
+.login_span {
+    color: var(--text-color);
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.login_button, .signUpBtn {
+    padding: 5px;
+    margin-top: 30px;
+    width: 150px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 3px solid var(--button-color);
+    background-color: var(--button-background-color);
+    color: var(--button-color);
+}
+
+.login_h4 {
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+.signUpBtn {
+    margin: 0;
+    background-color: var(--button-background-color);
+    color: var(--button-color);
+}
