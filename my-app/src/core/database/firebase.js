@@ -1,6 +1,6 @@
-import {initializeApp} from "firebase/app";
-import {getAuth} from 'firebase/auth';
-import {getFirestore} from "firebase/firestore";
+import firebase from "firebase/compat/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 // export const firebaseConfig = {
 //   apiKey: process.env.REACT_APP_APIKEY || 'mock_key',
@@ -18,10 +18,9 @@ export const firebaseConfig = {
   projectId: "to-do-list-3d63b",
   storageBucket: "to-do-list-3d63b.appspot.com",
   messagingSenderId: "769798511812",
-  appId: "1:769798511812:web:4cc76738e1e9d05ea53d91"
+  appId: "1:769798511812:web:4cc76738e1e9d05ea53d91",
 };
 
-const app = initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
-

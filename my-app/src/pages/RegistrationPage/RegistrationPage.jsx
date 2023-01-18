@@ -1,42 +1,50 @@
-import React, {useState, useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {useNavigate} from "react-router-dom";
-import {Input} from "../../components/Input";
-import {Button} from "../../components/Button";
-import {signUp} from "../../components/utilities";
-import {changeVerifPassword, changeEmail, changePassword} from "../../store/actions";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { Alert } from "@mui/material";
+import ArrowBackTwoToneIcon from "@mui/icons-material/ArrowBackTwoTone";
+import { Input } from "../../components/Input";
+import { Button } from "../../components/Button";
+import { Loading } from "../../components/Loading";
+import { signUp } from "../../core/utilits/utilities";
+import {
+  changeVerifPassword,
+  changeEmail,
+  changePassword,
+} from "../../core/actions/actions";
 import "./RegistrationPage.css";
-import {Alert} from "@mui/material";
-import ArrowBackTwoToneIcon from '@mui/icons-material/ArrowBackTwoTone';
 
-const RegistrationPage = () => {
+function RegistrationPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const email = useSelector(state => state.email);
-  const password = useSelector(state => state.password);
-  const verificationPassword = useSelector(state => state.verificationPassword);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [verificationPassword, setVerificationPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [errors, setErrors] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (isLoggedIn) {
-      return navigate("/todolist", {replace: true});
+      return navigate("/todolist", { replace: true });
     }
   }, [isLoggedIn]);
 
-  const onChangeEmail = (e) => dispatch(changeEmail(e.target.value));
-  const onChangePassword = (e) => dispatch(changePassword(e.target.value));
-  const onChangeVerificationPassword = (e) => dispatch(changeVerifPassword(e.target.value));
-
   const signUpHandler = () => {
+    dispatch(changeEmail(email));
+    dispatch(changePassword(password));
+    dispatch(changeVerifPassword(verificationPassword));
     if (password === verificationPassword) {
+      setLoading(true);
       signUp(email, password)
         .then(() => {
-          sessionStorage.email = email;
           setIsLoggedIn(true);
         })
         .catch((err) => {
           setErrors(err.message);
+        })
+        .finally(() => {
+          setLoading(false);
         });
     } else {
       setErrors("Password does not match");
@@ -44,35 +52,66 @@ const RegistrationPage = () => {
   };
 
   return (
-    <>
-      <div className={'registr_div'}>
+    <div className="registr_div">
+      <Button
+        className="btn_back"
+        title={<ArrowBackTwoToneIcon id="i" />}
+        onClick={() => {
+          navigate("/", { replace: true });
+        }}
+        type="button"
+      />
+      <h1 className="login_h1">Sign Up</h1>
+      <label htmlFor="input_email" className="login_label">
+        Email:
+      </label>
+      <Input
+        className="login_input"
+        value={email}
+        placeholder="example: qwer@mail.com"
+        onChange={(e) => setEmail(e.target.value)}
+        id="input_email"
+        type="text"
+      />
+      <label htmlFor="input_password" className="login_label">
+        Password:
+      </label>
+      <Input
+        id="input_password"
+        placeholder="example: 123456"
+        value={password}
+        className="login_input"
+        onChange={(e) => setPassword(e.target.value)}
+        type="password"
+      />
+      <label htmlFor="input_repeat" className="login_label">
+        Repeat password:
+      </label>
+      <Input
+        id="input_repeat"
+        value={verificationPassword}
+        placeholder="example: 123456"
+        className="login_input"
+        onChange={(e) => setVerificationPassword(e.target.value)}
+        type="password"
+      />
+      {loading ? (
+        <Loading />
+      ) : (
         <Button
-          className={'btn_back'}
-          title={<ArrowBackTwoToneIcon id="i"/>}
-          onClick={() => {
-            navigate('/', {replace: true})
-          }}
-          type={'button'}
+          className="login_button"
+          type="button"
+          title="Sign Up"
+          onClick={signUpHandler}
         />
-        <h1 className={'login_h1'}>Sign Up</h1>
-        <label className={'login_label'}>Email:</label>
-        <Input className={'login_input'} placeholder={'example: qwer@mail.com'} onChange={onChangeEmail}
-               type={'text'}/>
-        <label className={'login_label'}>Password:</label>
-        <Input placeholder={'example: 123456'} className={'login_input'} onChange={onChangePassword}
-               type={'password'}/>
-        <label className={'login_label'}>Repeat password:</label>
-        <Input placeholder={'example: 123456'} className={'login_input'} onChange={onChangeVerificationPassword}
-               type={'password'}/>
-        <Button className={'login_button'} type="button" title="Sign Up" onClick={signUpHandler}/>
-
-        {
-          errors ?
-            <Alert sx={{width: '300px', mt: 2}} severity="error">{errors}</Alert> : ''
-        }
-      </div>
-    </>
-  )
+      )}
+      {errors && (
+        <Alert sx={{ width: "300px", mt: 2 }} severity="error">
+          {errors}
+        </Alert>
+      )}
+    </div>
+  );
 }
 
 export default RegistrationPage;

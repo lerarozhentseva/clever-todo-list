@@ -8,6 +8,7 @@
 
 .btn_back {
     display: flex;
+    cursor: pointer;
     align-self: flex-end;
     font-size: 20px;
     justify-content: center;
@@ -40,15 +41,17 @@
     margin-top: 5px;
 }
 
-.login_button, .signUpBtn {
+.login_button, .sign_up_btn {
     padding: 5px;
     margin-top: 30px;
+    margin-right: 20px;
     width: 150px;
     font-size: 20px;
     border-radius: 5px;
     border: 3px solid var(--button-color);
     background-color: var(--button-background-color);
     color: var(--button-color);
+    cursor: pointer;
 }
 
 .login_h4 {
@@ -56,8 +59,13 @@
     color: var(--text-color);
 }
 
-.signUpBtn {
+.sign_up_btn {
     margin: 0;
     background-color: var(--button-background-color);
     color: var(--button-color);
+}
+
+.btns_controls {
+    display: flex;
+    flex-direction: row;
 }

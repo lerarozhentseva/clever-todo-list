@@ -26,8 +26,9 @@
     margin-top: 100px;
 }
 
-.signInBtn {
+.sign_in_btn {
     padding: 10px;
+    cursor: pointer;
     margin: 0 50px;
     font-size: 20px;
     border-radius: 5px;
@@ -45,7 +46,7 @@
     justify-content: center;
 }
 
-.btn-theme {
+.btn_theme {
     display: inline-block;
     width: 80px;
     height: 40px;
@@ -53,9 +54,10 @@
     background-color: var(--button-background-color);
     color: var(--button-color);
     border: none;
+    cursor: pointer;
 }
 
-.btn-theme:hover {
+.btn_theme:hover {
     filter: brightness(90%);
     cursor: pointer;
 }

@@ -1,43 +1,52 @@
 import React from "react";
-import {useNavigate} from "react-router";
+import { useNavigate } from "react-router";
 import "./HomePage.css";
-import {Button} from "../../components/Button";
-import {useTheme} from "../../components/useTheme";
+import { Button } from "../../components/Button";
+import { useTheme } from "../../core/hooks/useTheme";
 
-const HomePage = () => {
+function HomePage() {
   const navigate = useNavigate();
-  const {theme, setTheme} = useTheme();
+  const { setTheme } = useTheme();
 
   const handleLightThemeClick = () => {
-    setTheme('light')
-  }
+    setTheme("light");
+  };
 
   const handleDarkThemeClick = () => {
-    setTheme('dark')
-  }
+    setTheme("dark");
+  };
 
   return (
-    <div className={'home_div'}>
-      <div className={'theme_btns'}>
-        <Button className={'btn-theme'} title={'dark'} onClick={handleDarkThemeClick}/>
-        <Button className={'btn-theme'} title={'light'} onClick={handleLightThemeClick}/>
+    <div className="home_div">
+      <div className="theme_btns">
+        <Button
+          className="btn_theme"
+          title="dark"
+          onClick={handleDarkThemeClick}
+        />
+        <Button
+          className="btn_theme"
+          title="light"
+          onClick={handleLightThemeClick}
+        />
       </div>
-      <h1 className={'home_h1'}>To-do List</h1>
-      <h3 className={'home_h3'}>Organize your work and life. <br/>
+      <h1 className="home_h1">To-do List</h1>
+      <h3 className="home_h3">Organize your work and life.</h3>
+      <h3 className="home_h3">
         It will help you gain concentration, organization and peace.
       </h3>
-      <div className={'home_buttons'}>
+      <div className="home_buttons">
         <Button
           onClick={() => {
-            navigate('/login', {replace: true})
+            navigate("/login", { replace: true });
           }}
-          title={'Sign in'}
-          className={'signInBtn'}
-          type={'button'}
+          title="Sign in"
+          className="sign_in_btn"
+          type="button"
         />
       </div>
     </div>
-  )
-};
+  );
+}
 
 export default HomePage;

@@ -68,7 +68,7 @@ Database structure:
       * TodoPage file and css
       * Date file
   * store (redux files, actions, reducers)
-  * App.js
-  * index.js
+  * App.jsx
+  * index.jsx
   * index.css (file with colors for light and  dark theme)
   * App.css (background style for all project)

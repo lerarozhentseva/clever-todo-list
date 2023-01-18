@@ -1,5 +1,13 @@
-/*dark theme*/
+body {
+    background-color: var(--background-color);
 
+}
+
+.loading {
+    padding-top: 10px;
+}
+
+/*dark theme*/
 html[data-theme='dark'] {
     --button-color: #cccccc;
     --button-background-color: #212024;
@@ -19,10 +27,12 @@ html[data-theme='dark'] {
     --date-color: #909090;
 
     --color-icon-hover: #909090;
+
+    --checked-bg-color: #b5b5b5;
+    --checked-color: #1f1c1d;
 }
 
 /*light theme*/
-
 html[data-theme='light'] {
     --button-color: #0000FF;
     --button-background-color: #42AAFF;
@@ -42,4 +52,7 @@ html[data-theme='light'] {
     --date-color: #6A5ACD;
 
     --color-icon-hover: #1E213D;
+
+    --checked-bg-color: #42AAFF;
+    --checked-color: #ABCDEF;
 }

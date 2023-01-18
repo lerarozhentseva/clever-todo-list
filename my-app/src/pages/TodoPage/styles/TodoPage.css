@@ -43,7 +43,7 @@
     border: 3px solid var(--button-color);
 }
 
-.addNew_btn {
+.add_new_btn {
     display: inline-block;
     background-color: var(--button-background-color);
     color: var(--button-color);
@@ -55,7 +55,7 @@
     margin: 0 auto;
 }
 
-.add-block {
+.add_block {
     width: 400px;
     margin: 20px auto;
 }
@@ -76,6 +76,10 @@
     flex-direction: column;
 }
 
+.dialog_actions {
+    margin-right: 15px;
+}
+
 .modal_input {
     margin-top: 15px;
     padding: 10px;
@@ -90,15 +94,19 @@
     border-radius: 5px;
     margin: 4px;
     cursor: pointer;
+    width: 70px;
+    height: 70px;
 }
 
 .date_text {
-    padding: 5px;
+    padding: 5px 20px 0 20px;
+    font-size: 20px;
+    text-align: center;
 }
 
 .checked {
-    background-color: var(--button-background-color);
-    color: var(--background-color);
+    background-color: var(--checked-bg-color);
+    color: var(--checked-color);
     border-radius: 5px;
 }
 
@@ -107,6 +115,7 @@
     flex-direction: row;
     align-items: flex-start;
     margin-bottom: 10px;
+    height: 10px;
     justify-content: space-around;
 }
 
