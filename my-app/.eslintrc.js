@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["plugin:react/recommended", "airbnb", "prettier"],
+  extends: ["plugin:react/recommended", "airbnb", "prettier", "plugin:react-hooks/recommended", "plugin:react/jsx-runtime"],
   overrides: [],
   parserOptions: {
     ecmaVersion: "latest",
@@ -20,6 +20,7 @@ module.exports = {
     "array-callback-return": "off",
     "react/no-array-index-key": "off",
     "no-shadow": "off",
+    "no-unused-vars": "off",
     "no-param-reassign": "off",
     "jsx-a11y/no-static-element-interactions": "off",
     "react/button-has-type": "off",
